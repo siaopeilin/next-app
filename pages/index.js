@@ -6,7 +6,7 @@ import utilStyles from '../styles/utils.module.css'
 import { getPostsData } from '../lib/post'
 
 import Link from 'next/link'
-import Layout from '../components/Layout'
+import Layout, {siteTitle} from '../components/Layout'
 
 // SSGの場合
 export async function getStaticProps() {
@@ -33,7 +33,10 @@ export async function getStaticProps() {
 
 export default function Home({allPostsData}) {
   return (
-    <Layout>
+    <Layout home>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
       <section className={utilStyles.headingMd}>
         <p>ぺいぺいですよ！！！！！</p>
       </section>
